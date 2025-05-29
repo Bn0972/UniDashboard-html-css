@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  uni-dashboard:
+  uni-dashboard-production:
     image: ${DOCKER_REGISTRY}/uni-dashboard:${VERSION}
     # container_name: uni-dashboard-prod
     ports:
