@@ -15,7 +15,7 @@ services:
       retries: 3
     restart: unless-stopped
     networks:
-      - uni-dashboard-network
+      - uni-dashboard-network-production
     deploy:
       replicas: 1
       update_config:
@@ -27,7 +27,7 @@ services:
         order: stop-first
 
 networks:
-  uni-dashboard-network:
+  uni-dashboard-network-production:
     driver: bridge 
 
 
