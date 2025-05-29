@@ -1,21 +1,21 @@
 version: '3.8'
 
 services:
-  egg-timer-app:
-    image: ${DOCKER_REGISTRY}/egg-timer-app:${VERSION}
-    container_name: egg-timer-app-prod
+  uni-dashboard:
+    image: ${DOCKER_REGISTRY}/uni-dashboard:${VERSION}
+    container_name: uni-dashboard-prod
     ports:
       - "80:80"
     environment:
       - NODE_ENV=production
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
       interval: 30s
       timeout: 10s
       retries: 3
     restart: unless-stopped
     networks:
-      - egg-timer-network
+      - uni-dashboard-network
     deploy:
       replicas: 2
       update_config:
@@ -27,5 +27,8 @@ services:
         order: stop-first
 
 networks:
-  egg-timer-network:
+  uni-dashboard-network:
     driver: bridge 
+
+
+    
