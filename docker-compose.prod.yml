@@ -3,7 +3,7 @@ version: '3.8'
 services:
   uni-dashboard:
     image: ${DOCKER_REGISTRY}/uni-dashboard:${VERSION}
-    container_name: uni-dashboard-prod
+    # container_name: uni-dashboard-prod
     ports:
       - "80:80"
     environment:
