@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY}/uni-dashboard:${VERSION}
     container_name: uni-dashboard-staging
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       - NODE_ENV=staging
     healthcheck:
